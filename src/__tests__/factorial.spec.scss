@@ -1,0 +1,90 @@
+@import 'true';
+@import '../factorial';
+
+@include describe('.factorial [function]') {
+  @include describe('for original usage') {
+    @include it('should return value for 1! as 1') {
+      @include assert-equal(factorial(1), 1);
+    }
+
+    @include it('should return value for 2! as 2') {
+      @include assert-equal(factorial(2), 2);
+    }
+
+    @include it('should return value for 3! as 6') {
+      @include assert-equal(factorial(3), 6);
+    }
+
+    @include it('should return value for 4! as 24') {
+      @include assert-equal(factorial(4), 24);
+    }
+
+    @include it('should return value for 5! as 120') {
+      @include assert-equal(factorial(5), 120);
+    }
+
+    @include it('should return value for 6! as 720') {
+      @include assert-equal(factorial(6), 720);
+    }
+
+    @include it('should return value for 7! as 5040') {
+      @include assert-equal(factorial(7), 5040);
+    }
+
+    @include it('should return value for 8! as 40320') {
+      @include assert-equal(factorial(8), 40320);
+    }
+
+    @include it('should return value for 9! as 362880') {
+      @include assert-equal(factorial(9), 362880);
+    }
+
+    @include it('should return value for 10! as 3628800') {
+      @include assert-equal(factorial(10), 3628800);
+    }
+  }
+
+  @include describe('for optimised usage') {
+    @include it('should return value for 1! as 1') {
+      @include assert-equal(factorial(1, 1, 1), 1);
+    }
+
+    @include it('should return value for 2! as 2') {
+      @include assert-equal(factorial(2, 1, 1), 2);
+    }
+
+    @include it('should return value for 3! as 6') {
+      @include assert-equal(factorial(3, 2, 2), 6);
+    }
+
+    @include it('should return value for 4! as 24') {
+      @include assert-equal(factorial(4, 2, 2), 24);
+    }
+
+    @include it('should return value for 5! as 120') {
+      @include assert-equal(factorial(5, 3, 6), 120);
+    }
+
+    @include it('should return value for 6! as 720') {
+      @include assert-equal(factorial(6, 4, 24), 720);
+    }
+
+    @include it('should return value for 7! as 5040') {
+      @include assert-equal(factorial(7, 5, 120), 5040);
+    }
+
+    @include it('should return value for 8! as 40320') {
+      @include assert-equal(factorial(8, 6, 720), 40320);
+    }
+
+    @include it('should return value for 9! as 362880') {
+      @include assert-equal(factorial(9, 7, 5040), 362880);
+    }
+
+    @include it('should return value for 10! as 3628800') {
+      @include assert-equal(factorial(10, 8, 40320), 3628800);
+    }
+  }
+}
+
+@include report;

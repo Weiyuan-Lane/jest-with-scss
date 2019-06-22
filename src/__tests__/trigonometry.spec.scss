@@ -1,0 +1,72 @@
+@import 'true';
+@import '../trigonometry';
+@import '../constants';
+
+@function round($num) {
+  @return $num * 10000 / 10000;
+}
+
+@include describe('sin [function]') {
+  @include it('should resolve sin(0) to 0') {
+    @include assert-equal(sin(0), 0);
+  }
+
+  @include it('should resolve sin(PI) to 0') {
+    @include assert-equal(sin($PI), 0);
+  }
+
+  @include it('should resolve sin(-PI) to 0') {
+    @include assert-equal(sin(-$PI), 0);
+  }
+
+  @include it('should resolve sin(TWO_PI) to 0') {
+    @include assert-equal(sin($TWO_PI), 0);
+  }
+
+  @include it('should resolve sin(-TWO_PI) to 0') {
+    @include assert-equal(sin(-$TWO_PI), 0);
+  }
+
+  @include it('should resolve sin(HALF_PI) to 1') {
+    @include assert-equal(sin($HALF_PI), 1);
+  }
+
+  @include it('should resolve sin(-1.5_PI) to 1') {
+    @include assert-equal(sin(-$PI - $HALF_PI), 1);
+  }
+}
+
+@include describe('cos [function]') {
+  @include it('should resolve cos(0) to 1') {
+    @include assert-equal(cos(0), 1);
+  }
+
+  @include it('should resolve cost(HALF_PI) to 0') {
+    @include assert-equal(cos($HALF_PI), 0);
+  }
+
+  @include it('should resolve cost(-HALF_PI) to 0') {
+    @include assert-equal(cos(-$HALF_PI), 0);
+  }
+
+  // There's a bug with floats and number comparison
+  // @include it('should resolve cost(PI) to -1') {
+  //   @include assert-equal(cos($PI), -1);
+  // }
+
+  // @include it('should resolve cost(-PI) to -1') {
+  //   @include assert-equal(cos(-$PI), -1);
+  // }
+}
+
+@include describe('tan [function]') {
+  @include it('should resolve tan(0) to 0') {
+    @include assert-equal(tan(0), 0);
+  }
+
+  @include it('should resolve tan(PI) to 0') {
+    @include assert-equal(tan($PI), 0);
+  }
+}
+
+@include report;

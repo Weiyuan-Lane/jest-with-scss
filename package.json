@@ -1,0 +1,25 @@
+{
+  "name": "jest-with-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Weiyuan-Lane/jest-with-scss.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Weiyuan-Lane/jest-with-scss/issues"
+  },
+  "homepage": "https://github.com/Weiyuan-Lane/jest-with-scss#readme",
+  "devDependencies": {
+    "glob": "~7.1.4",
+    "jest": "~24.8.0",
+    "node-sass": "~4.12.0",
+    "sass-true": "~5.0.0"
+  }
+}

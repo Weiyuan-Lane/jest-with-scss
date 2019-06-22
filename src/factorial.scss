@@ -1,0 +1,12 @@
+// Can be used as a regular factorial function
+// By providing the current counter and acculmulated value,
+// can optimise to reduce recomputation from previous factorial values
+@function factorial($endAt, $startAt: 1, $currentVal: 1) {
+  $accVal: $currentVal;
+    
+  @for $i from $startAt + 1 to $endAt + 1 {
+    $accVal: $i * $accVal;
+  }
+    
+  @return $accVal;
+}
